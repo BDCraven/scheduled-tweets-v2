@@ -6,3 +6,6 @@
 Rails.application.config.filter_parameters += [
   :passw, :email, :secret, :token, :_key, :crypt, :salt, :certificate, :otp, :ssn
 ]
+if Rails.env.development?
+  Rails.application.config.filter_parameters -= [ :email ]
+end
